@@ -53,6 +53,12 @@ public class TemplateDataListener extends AnalysisEventListener<TemplateData> {
         System.out.println("数据读取完成");
     }
 
+    /**
+     * 在转换异常 获取其他异常下会调用本接口。抛出异常则停止读取。如果这里不抛出异常则 继续读取下一行。
+     * @param exception 异常信息
+     * @param context 上下文
+     * @throws Exception 异常
+     */
     @Override
     public void onException(Exception exception, AnalysisContext context) throws Exception {
         System.out.print("读取数据发生异常:");
